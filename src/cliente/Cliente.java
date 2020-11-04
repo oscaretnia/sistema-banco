@@ -28,7 +28,7 @@ public class Cliente {
                 
     private void conectarServidor() {
         try {
-            Registry registro = LocateRegistry.getRegistry("localhost", 4446);
+            Registry registro = LocateRegistry.getRegistry("localhost", 4444);
             banco = (OperacionesBancarias) registro.lookup("sistemaBancario");
         } catch (RemoteException | NotBoundException re) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, re);

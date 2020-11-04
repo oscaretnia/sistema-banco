@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 public class Servidor {
     
-    public Servidor() {
+    public void run() {
         try {
             OperacionesBancarias banco = new SistemaBancario();
             Registry registro = LocateRegistry.createRegistry(4444);
@@ -30,7 +30,7 @@ public class Servidor {
     }
     
     public static void main (String args[]) {        
-        new Servidor();
+        new Servidor().run();
     }
     
 }

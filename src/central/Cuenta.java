@@ -5,11 +5,15 @@
  */
 package central;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Sophy
  */
-public class Cuenta {
+public class Cuenta implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
     
     private String numero;
     private String propietario;

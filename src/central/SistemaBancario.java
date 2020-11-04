@@ -6,17 +6,19 @@
 package central;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  *
  * @author Sophy
  */
-public class SistemaBancario implements OperacionesBancarias {
+public class SistemaBancario extends UnicastRemoteObject implements OperacionesBancarias {
 
     private final Servicios servicio;
     
     public SistemaBancario()  throws RemoteException {
-        super();servicio = new Servicios();        
+        super();
+        servicio = new Servicios();        
     }
 
     @Override

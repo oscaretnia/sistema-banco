@@ -33,7 +33,9 @@ public class Servicios {
             return st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
         return false;
     }
     
@@ -45,7 +47,9 @@ public class Servicios {
             return st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
         return false;
     }
     
@@ -58,7 +62,9 @@ public class Servicios {
             return st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
         return false;
     }
     
@@ -71,7 +77,9 @@ public class Servicios {
             if (rs.next()) return rs.getInt("cantidadDinero");        
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
         return -1;
     }
     
@@ -91,6 +99,8 @@ public class Servicios {
             return st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
+        }finally {
+            conexion.close();
         }
         return false;
     }
@@ -112,7 +122,9 @@ public class Servicios {
             return st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
         return false;
     }
     
@@ -132,7 +144,9 @@ public class Servicios {
             }        
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
         return usuario;
     }
     
@@ -151,7 +165,9 @@ public class Servicios {
             st.executeUpdate();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-        } 
+        } finally {
+            conexion.close();
+        }
     }
     
     private void crearUsuariosDummy() {
