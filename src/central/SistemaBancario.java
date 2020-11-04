@@ -49,7 +49,7 @@ public class SistemaBancario extends UnicastRemoteObject implements OperacionesB
     @Override
     public String obtenerSaldo(String cuenta) throws RemoteException {
         int saldo = servicio.obtenerSaldo(cuenta);        
-        return saldo >= 0 ? "5:" + saldo : "1";
+        return saldo >= 0 ? "" + saldo : "1";
     }   
 
     @Override

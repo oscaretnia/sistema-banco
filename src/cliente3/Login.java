@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cliente;
+package cliente3;
 
 
+import cliente1.*;
 import central.OperacionesBancarias;
 import java.rmi.RemoteException;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -122,9 +122,13 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             if (control.verificarUsuario(txtId.getText().trim(), txtClave.getText().trim())) {
-                showMessageSuccess("Credenciales validas");
+                
+                new VistaManejo(txtId.getText().trim()).iniciar();
+                dispose();
+                
             } else {
                 showMessageError("Credenciales invalidas");
+                limpiar();
             }
         
         } catch (RemoteException ex) {
@@ -143,6 +147,11 @@ public class Login extends javax.swing.JFrame {
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+    }
+    
+    private void limpiar() {
+        txtId.setText("");
+        txtClave.setText("");
     }
     
 
